@@ -9,6 +9,9 @@
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://dummyimage.com/1200x630/0a2540/ffffff&text=LinguaLink+Translations" />
   <meta name="theme-color" content="#0a2540" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://dummyimage.com; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://api.whatsapp.com mailto:; upgrade-insecure-requests">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
   <style>
     :root{--bg:#0a2540;--bg2:#0f3057;--acc:#2ec4b6;--soft:#f5f7fb;--ink:#16202a}
     *{box-sizing:border-box}
@@ -67,7 +70,7 @@
         <a href="#services">Services</a>
         <a href="#pricing">Pricing</a>
         <a href="#contact">Contact</a>
-        <a class="btn" href="https://api.whatsapp.com/send?phone=917879558750" target="_blank" rel="noopener">Chat on WhatsApp</a>
+        <a class="btn" href="#" onclick="openWhatsApp(); return false;"" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
       </nav>
     </div>
   </header>  <main>
@@ -78,10 +81,10 @@
           <h1>Professional Translation & Localization for a Connected India</h1>
           <p class="lead">We deliver accurate, culturally‑relevant translations across English, Hindi, Urdu, Arabic and other Indian languages for businesses, authors, NGOs and individuals — on time, every time.</p>
           <div class="cta">
-            <a class="btn" href="https://api.whatsapp.com/send?phone=917879558750" target="_blank" rel="noopener">Get a Quote on WhatsApp</a>
-            <a class="btn alt" href="mailto:uarman020@gmail.com?subject=Translation%20Inquiry%20-%20LinguaLink&body=Hi%20LinguaLink%2C%20I%E2%80%99d%20like%20a%20quote%20for%20...">Email Us</a>
+            <a class="btn" href="#" onclick="openWhatsApp(); return false;"" target="_blank" rel="noopener noreferrer">Get a Quote on WhatsApp</a>
+            <a class="btn alt" href="#" onclick="openEmail(); return false;"?subject=Translation%20Inquiry%20-%20LinguaLink&body=Hi%20LinguaLink%2C%20I%E2%80%99d%20like%20a%20quote%20for%20...">Email Us</a>
           </div>
-          <div style="margin-top:10px;font-size:14px;color:#556">Call: <a href="tel:+917879558750">+91 78795 58750</a> · Email: <a href="mailto:uarman020@gmail.com">uarman020@gmail.com</a></div>
+          <div style="margin-top:10px;font-size:14px;color:#556">Call: <a href="#" onclick="callNumber(); return false;"">+91 78795 58750</a> · Email: <a href="#" onclick="openEmail(); return false;"">uarman020@gmail.com</a></div>
         </div>
         <div class="card">
           <div class="kpis">
@@ -152,12 +155,12 @@
       <h2>Get a Free Quote</h2>
       <p class="lead">Share your document type, languages and deadline. We’ll reply fast with pricing and timeline.</p>
       <div class="cta">
-        <a class="btn" href="https://api.whatsapp.com/send?phone=917879558750&text=Hi%20LinguaLink%2C%20I%20need%20a%20translation%20quote%20for..." target="_blank" rel="noopener">WhatsApp Now</a>
-        <a class="btn alt" href="mailto:uarman020@gmail.com?subject=Quote%20Request%20-%20LinguaLink&body=Source%20Language:%0ATarget%20Language:%0AWord%20Count%20(approx):%0ADeadline:%0ASpecial%20notes:">Email Request</a>
+        <a class="btn" href="#" onclick="openWhatsApp(); return false;"" target="_blank" rel="noopener noreferrer">WhatsApp Now</a>
+        <a class="btn alt" href="#" onclick="openEmail(); return false;"?subject=Quote%20Request%20-%20LinguaLink&body=Source%20Language:%0ATarget%20Language:%0AWord%20Count%20(approx):%0ADeadline:%0ASpecial%20notes:">Email Request</a>
       </div>
       <div style="margin-top:14px">
-        <div>Phone: <a href="tel:+917879558750">+91 78795 58750</a></div>
-        <div>Email: <a href="mailto:uarman020@gmail.com">uarman020@gmail.com</a></div>
+        <div>Phone: <a href="#" onclick="callNumber(); return false;"">+91 78795 58750</a></div>
+        <div>Email: <a href="#" onclick="openEmail(); return false;"">uarman020@gmail.com</a></div>
       </div>
     </div>
     <div class="card contact-card">
@@ -203,5 +206,32 @@
         "Proofreading & Editing"
       ]
     }
+  </script>  <script>
+    // Obfuscation helpers: assemble contacts at runtime to avoid simple scraping
+    function openWhatsApp() {
+      var cc = '91';
+      var num = '7879558750';
+      var text = encodeURIComponent('Hi LinguaLink, I need a translation quote for...');
+      var url = 'https://api.whatsapp.com/send?phone=' + cc + num + '&text=' + text;
+      window.open(url, '_blank', 'noopener');
+    }
+    function callNumber() {
+      var cc = '+91';
+      var num = '7879558750';
+      window.location.href = 'tel:' + cc + num;
+    }
+    function openEmail() {
+      var user = 'uarman020';
+      var domain = 'gmail.com';
+      var subject = encodeURIComponent('Quote Request - LinguaLink');
+      var body = encodeURIComponent('Source Language:
+Target Language:
+Word Count (approx):
+Deadline:
+Special notes:');
+      window.location.href = 'mailto:' + user + '@' + domain + '?subject=' + subject + '&body=' + body;
+    }
   </script></body>
 </html>
+
+    
